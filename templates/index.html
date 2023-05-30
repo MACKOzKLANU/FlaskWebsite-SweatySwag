@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<style>
+  body {
+  background-color: lightblue;
+}
+  .tekst {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .sweatyswag {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+
+  }
+  .img{
+    max-height: 2vh;
+  }
+  .search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-container input[type=text] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  width: 20vh;
+  transition: width 0.4s ease-in-out;
+}
+
+.search-container input[type=text]:focus {
+  width: 40vh;
+}
+
+.search-container button {
+  position: relative;
+  right: 0;
+  top: 0;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+.bag{
+  height: 5vh;
+}
+/* Dodatkowy styl dla strony */
+
+.card {
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+  }
+  .carousel-item{
+    width: auto;
+    height: auto;
+  }
+  
+  footer {
+    margin-top: 50px;
+  }
+  .navbar-brand:hover{
+    color: #f46b30;
+    transition: 0.2s;
+
+
+  }
+
+
+
+
+  
+  
+</style>
+
+<body>
+  <div class="bg-black  ">
+
+
+    <a class="tekst text-light" href="https://www.instagram.com/_sweatyswag/">
+      <p class="tekst  ">Instagram @_sweatyswag</p>
+    </a>
+    
+    <div class="d-flex justify-content-between">
+      
+
+      <img class="sweatyswag" src="//cdn.shopify.com/s/files/1/0666/0053/4272/files/3dgifmaker71184.gif?v=1666873658&width=500">
+
+    </div>
+    <nav class="navbar bg-black ">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="koszyk.html"><img class="bag" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Shopping_cart_icon.svg"></a>
+        
+
+        <form class="d-flex" role="search">
+          <div class="search-container">
+            <form>
+              <input id="szukacz" type="text" placeholder="Search...">
+              <button onclick="wyszukiwanie()" type="submit" href="google.com">  <img class="img" src="image.png">
+                </button>
+            </form>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-md">
+        <a class="navbar-brand" href="index.html">Strona główna</a>
+        <a class="navbar-brand" href="koszulki.html">Koszulki</a>
+        <a class="navbar-brand" href="topy.html">Tank-topy</a>
+        <a class="navbar-brand" href="bluzy.html">Bluzy</a>
+        <a class="navbar-brand" href="dni.html">Dni treningowe</a>
+        <a class="navbar-brand" href="zamowienia.html">Śledzenie zamówień</a>
+
+
+
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+
+    <!-- <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        {% for item in items %}
+        <div class="carousel-item active">
+          <img id="karuzela" src='{{ item["imageURL"] }}' class="d-block w-100" alt="...">
+        </div>
+        {% endfor %} -->
+
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+    
+    <main class="container py-5">
+      <h2 class="text-center mb-4">Najnowsze produkty</h2>
+      
+      <div class="row">
+        {% for item in items %}
+          <div class="col-md-4 mb-4">
+            
+              <div class="card h-100">
+                
+                  <img src='{{ item["imageURL"] }}' class="card-img-top"
+                      alt="Produkt 1">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ item["title"] }}
+                      </h5>
+                      <p class="card-text">{{ item["views"] }}
+
+                      </p>
+                      <a href="koszyk.html" class="btn btn-primary">Kup teraz</a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
+        
+
+    </main>
+    
+  </div>
+      <div class="card text-center">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">O nas</h5>
+          <p class=" card-text"><a class="tekst text-dark" href="regulamin.html">regulamin </a><a class="tekst text-dark" href="dane.html">dane firmy</a></p>
+          <a href="https://www.tiktok.com/@_sweatyswag" class="btn btn-primary"><img class="img" src="zdjecia/tiktok.png"></a>
+          <a href="https://www.instagram.com/_sweatyswag/" class="btn btn-primary"><img class="img" src="zdjecia/instagram.png"></a>
+
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <!-- <script>
+    function wyszukiwaniece(){
+
+        szuk = document.getElementById("szukacz").value
+        form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchTerm = document.querySelector('#searchInput').value;
+        window.location.href = `bluzy.html`;
+});
+    }
+    
+  </script> -->
+</body>
+
+</html>
